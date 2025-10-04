@@ -1,0 +1,11 @@
+asyncio
+json
+os
+csv
+gspread
+langchain
+langchain-community
+playwright
+oauth2client
+openai
+faiss-cpu
