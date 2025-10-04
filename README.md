@@ -41,27 +41,23 @@ You need the following to run the script:
 ## Building and Running the Docker Container
 
 1. Build the Docker image:
-
-docker build -t table-data-extractor .
+   ```bash
+   docker build -t table-data-extractor .
 
 2. Run the Docker container:
+   ```bash
+   docker run -it table-data-extractor
 
-docker run -it table-data-extractor
-
-   The -it flag ensures you can interact with the container (if your script has inputs, like the URL for table extraction).
+The -it flag ensures you can interact with the container (if your script has inputs, like the URL for table extraction).
 
 **Notes:**
 
-API Key and Credentials:
-
-Make sure to handle your API keys and credentials securely. You can either:
-
-Pass them as environment variables when running the container:
-
-docker run -it -e OPENAI_API_KEY="your-api-key" -e GOOGLE_SHEETS_CREDS="/path/to/creds.json" table-data-extractor
-
-Or use Docker volumes to mount local files (like your credentials.json) into the container:
-
-docker run -it -v /path/to/your/credentials.json:/app/credentials.json table-data-extractor
-
-Make sure the .gitignore worked and sensitive files like credentials.json aren’t uploaded.
+- API Key and Credentials:
+- Make sure to handle your API keys and credentials securely. You can either:
+- Pass them as environment variables when running the container:
+   ```bash
+   docker run -it -e OPENAI_API_KEY="your-api-key" -e GOOGLE_SHEETS_CREDS="/path/to/creds.json" table-data-extractor
+- Or use Docker volumes to mount local files (like your credentials.json) into the container:
+   ```bash
+   docker run -it -v /path/to/your/credentials.json:/app/credentials.json table-data-extractor
+- Make sure the .gitignore worked and sensitive files like credentials.json aren’t uploaded.
